@@ -7,9 +7,9 @@ DishFlip::Application.configure do
   config.paperclip_defaults = {
     :storage => :s3,
     :s3_credentials => {
-      :bucket => ENV['dishflip/food_pictures'],
-      :access_key_id => ENV['AKIAIHHSTLICNE7UGPXQ'],
-      :secret_access_key => ENV['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']
+      :bucket => ENV['AWS_BUCKET'],
+      :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
     }
   }
 
