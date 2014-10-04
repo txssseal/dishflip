@@ -4,6 +4,18 @@ DishFlip::Application.configure do
   # Code is not reloaded between requests.
   config.cache_classes = true
 
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => ENV['dishflip/food_pictures'],
+      :access_key_id => ENV['AKIAIHHSTLICNE7UGPXQ'],
+      :secret_access_key => ENV['Fj2fDPzIz+rj8RBXJquQFJalxArv6Wc7TFM7xlTx']
+    }
+  }
+
+
+
+
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both thread web servers
   # and those relying on copy on write to perform better.

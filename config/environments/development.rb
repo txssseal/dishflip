@@ -6,6 +6,16 @@ DishFlip::Application.configure do
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
 
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => ENV['dishflip/food_pictures'],
+      :access_key_id => ENV['AKIAIHHSTLICNE7UGPXQ'],
+      :secret_access_key => ENV['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']
+    }
+  }
+
+
   # Do not eager load code on boot.
   config.eager_load = false
 
