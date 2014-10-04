@@ -1,0 +1,31 @@
+
+
+<%= bootstrap_form_for(@rest) do |f| %>
+  <%= f.text_field :restaurant_name %>
+  <%= f.text_field :meal_name %>
+  <%= f.text_field :meal_price %>
+  <%#= f.text_field :restaurant_area %>
+
+  <%= f.form_group :restaurant_area, :class => "radio-inline", label: { text: "Area"} do %>
+        <%= f.radio_button :restaurant_area, "Uptown", label: "Uptown", checked: true %>
+        <%= f.radio_button :restaurant_area, "Greenville", label: "Greenville" %>
+        <%= f.radio_button :restaurant_area, "Knox-Henderson", label: "Knox-Henderson" %>
+        <%= f.radio_button :restaurant_area, "North Dallas", label: "North Dallas" %>
+        <%= f.radio_button :restaurant_area, "Addison", label: "Addison" %>
+        <%= f.radio_button :restaurant_area, "Trinity Groves", label: "Trinity Groves" %>
+        <%= f.radio_button :restaurant_area, "Bishop Arts", label: "Bishop Arts" %>
+        <%= f.radio_button :restaurant_area, "Lower Greenville", label: "Lower Greenville" %>
+        <%= f.radio_button :restaurant_area, "Downtown", label: "Downtown" %>
+        <%= f.radio_button :restaurant_area, "Oak Lawn", label: "Oak Lawn" %>
+        <%= f.radio_button :restaurant_area, "Lakewood", label: "Lakewood" %>
+    <% end %>
+
+
+
+
+  <%= f.text_field :restaurant_address %>
+  <%= f.text_field :cuisine_type %>
+  <%= f.file_field :picture %>
+  
+  <%= f.submit "Submit" %>
+<% end %>

@@ -1,0 +1,37 @@
+<h1>Listing rests</h1>
+
+
+<table class = "table table-striped">
+      <thead>
+        <tr>
+          <th>Restaurant Name</th>
+          <th>Meal Name</th>
+          <th>Meal Price</th>
+          <th>Restaurant Area</th>
+          <th>Restaurant Address</th>
+          <th>Cuisine Type</th>
+          <th>Picture</th>
+        </tr> 
+      </thead>
+      <tbody>
+    
+    <% @rests.each do |rest| %>
+          <tr>
+            <td><%= rest.restaurant_name %></td>
+            <td><%= rest.meal_name %></td>
+            <td><%= rest.meal_price %></td>
+            <td><%= rest.restaurant_area %></td>
+            <td><%= rest.restaurant_address %></td>
+            <td><%= rest.cuisine_type %></td>
+            <td><%= image_tag rest.picture.url(:thumb) %></td>
+            <td><%= link_to 'Show', rest %></td>
+            <td><%= link_to 'Edit', edit_rest_path(rest) %></td>
+            <td><%= link_to 'Destroy', rest, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+<br>
+
+<%= link_to 'New', new_rest_path %>
