@@ -1,0 +1,38 @@
+<h1><%= @restaurant.restaurant_name %>'s Meals</h1>
+
+
+<table class = "table table-striped">
+      <thead>
+        <tr>
+          <th>Restaurant Name</th>	
+          <th>Meal Name</th>
+          <th>Meal Price</th>
+          <th>Cuisine Type</th>
+          <th>Picture</th>
+        </tr> 
+      </thead>
+      <tbody>
+    
+    <% @restaurant.meals.each do |meal| %>
+    			<td><%= @restaurant.restaurant_name %></td>
+                <td> <%= meal.meal_name %> </td>
+                <td> <%= meal.meal_price %> </td>
+                <td> <%= meal.cuisine_type %> </td>
+                <td><%= image_tag meal.meal_photo.url(:thumb) %></td>
+
+
+            <td><%= link_to 'Show', meal %></td>
+            <td><%= link_to 'Edit', edit_meal_path(meal) %></td>
+            <td><%= link_to 'Destroy', meal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+
+
+<%= link_to 'New Meal', new_meal_path(restaurant_id: @restaurant.id) %></br>
+
+
+<%= link_to 'Edit Restaurant Name', edit_restaurant_path(@restaurant) %> |
+<%= link_to 'Back', restaurants_path %>

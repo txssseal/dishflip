@@ -11,10 +11,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141004174850) do
+ActiveRecord::Schema.define(version: 20141007223127) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "locations", force: true do |t|
+    t.string   "street_address"
+    t.integer  "zipcode"
+    t.string   "city"
+    t.integer  "restaurant_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "meals", force: true do |t|
+    t.string   "meal_name"
+    t.integer  "meal_price"
+    t.string   "cuisine_type"
+    t.integer  "restaurant_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "meal_photo_file_name"
+    t.string   "meal_photo_content_type"
+    t.integer  "meal_photo_file_size"
+    t.datetime "meal_photo_updated_at"
+  end
+
+  create_table "restaurants", force: true do |t|
+    t.string   "restaurant_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "restaurant_logo_file_name"
+    t.string   "restaurant_logo_content_type"
+    t.integer  "restaurant_logo_file_size"
+    t.datetime "restaurant_logo_updated_at"
+  end
 
   create_table "rests", force: true do |t|
     t.string   "restaurant_name"

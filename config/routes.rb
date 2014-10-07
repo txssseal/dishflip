@@ -1,9 +1,15 @@
 DishFlip::Application.routes.draw do
+  resources :locations
+
+  resources :meals
+
+  resources :restaurants
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root 'rests#new'
+   root 'restaurants#index'
    resources :rests
 
   # Example of regular route:

@@ -1,0 +1,8 @@
+<%= bootstrap_form_for(@restaurant) do |f| %>
+  
+  
+  <%= f.text_field :restaurant_name %>
+  <%= f.file_field :restaurant_logo %>
+  <%= f.submit "Submit" %>
+
+<% end %>
