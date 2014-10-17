@@ -26,12 +26,13 @@ class MealsController < ApplicationController
   # POST /meals.json
   def create
     @meal = Meal.new(meal_params)
+    @hello = new_meal_path
 
 
 
     respond_to do |format|
       if @meal.save
-        format.html { redirect_to restaurant_path(params[:restaurant_id]), notice: 'Meal was successfully created.' }
+        format.html { redirect_to @hello, notice: 'Meal was successfully created.' }
         format.json { render action: 'show', status: :created, location: @meal }
       else
         format.html { render action: 'new' }
