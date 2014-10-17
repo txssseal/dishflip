@@ -28,9 +28,10 @@ class MealsController < ApplicationController
     @meal = Meal.new(meal_params)
 
 
+
     respond_to do |format|
       if @meal.save
-        format.html { redirect_to @meal, notice: 'Meal was successfully created.' }
+        format.html { redirect_to restaurant_path(params[:restaurant_id]), notice: 'Meal was successfully created.' }
         format.json { render action: 'show', status: :created, location: @meal }
       else
         format.html { render action: 'new' }
