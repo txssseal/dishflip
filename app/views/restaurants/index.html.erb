@@ -1,4 +1,4 @@
-<h1>Restaurant List</h1>
+<h1>Restaurant List</h1><%= link_to 'Create New Restaurant', new_restaurant_path %>
 <table class = "table table-striped">
       <thead>
         <tr>
@@ -15,7 +15,7 @@
     
     <% @restaurants.each do |rest| %>
           <tr>
-            <td><%= rest.restaurant_name %></td>
+            <td><%= link_to rest.restaurant_name, rest %></td>
             <td><%= image_tag rest.restaurant_logo.url(:thumb) %></td>
            
            <!-- <td><%#= rest.meals.meal_name %></td>
