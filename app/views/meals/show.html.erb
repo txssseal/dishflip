@@ -20,5 +20,10 @@
   <%= @meal.restaurant_id %>
 </p>
 
+<p>
+	<strong>Picture</strong>
+	<%= image_tag @meal.meal_photo.url(:medium) %>
+</p>
+
 <%= link_to 'Edit', edit_meal_path(@meal) %> |
 <%= link_to 'Back', meals_path %>
