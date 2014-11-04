@@ -7,7 +7,7 @@
       <th>Zipcode</th>
       <th>City</th>
       <th>Restaurant</th>
-      <th></th>
+      <th>Area</th>
       <th></th>
       <th></th>
     </tr>
@@ -20,6 +20,7 @@
         <td><%= location.zipcode %></td>
         <td><%= location.city %></td>
         <td><%= location.restaurant_id %></td>
+        <td><%= location.area %></td>
         <td><%= link_to 'Show', location %></td>
         <td><%= link_to 'Edit', edit_location_path(location) %></td>
         <td><%= link_to 'Destroy', location, method: :delete, data: { confirm: 'Are you sure?' } %></td>
