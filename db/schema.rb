@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141103215704) do
+ActiveRecord::Schema.define(version: 20141104185833) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,9 @@ ActiveRecord::Schema.define(version: 20141103215704) do
     t.string   "restaurant_logo_content_type"
     t.integer  "restaurant_logo_file_size"
     t.datetime "restaurant_logo_updated_at"
+    t.string   "email"
+    t.string   "website"
+    t.string   "facebook"
   end
 
   create_table "rests", force: true do |t|

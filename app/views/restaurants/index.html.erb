@@ -4,6 +4,9 @@
         <tr>
           <th>Restaurant Name</th>
           <th>Logo</th>
+          <th>Email</th>
+          <th>Website</th>
+          <th>Facebook</th>
          <!-- <th>Meal Price</th>
           <th>Restaurant Area</th>
           <th>Restaurant Address</th>
@@ -17,6 +20,10 @@
           <tr>
             <td><%= link_to rest.restaurant_name, rest %></td>
             <td><%= image_tag rest.restaurant_logo.url(:thumb) %></td>
+            <td><%= rest.email %></td>
+            <td><%= rest.website %></td>
+            <td><%= rest.facebook %></td>
+
            
            <!-- <td><%#= rest.meals.meal_name %></td>
             <td><%#= rest.meal_price %></td>
