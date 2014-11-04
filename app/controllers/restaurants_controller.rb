@@ -6,7 +6,7 @@ class RestaurantsController < ApplicationController
   # GET /restaurants.json
   def index
     @restaurants = Restaurant.all
-    
+
 
   end
 
@@ -78,6 +78,6 @@ class RestaurantsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def restaurant_params
       params.require(:restaurant).permit(:restaurant_name, :restaurant_logo, :email,
-        :facebook, :website)
+        :facebook, :website, :phone)
     end
 end
