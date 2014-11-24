@@ -1,0 +1,13 @@
+---
+:Meal:
+  :meal_photo:
+  - :medium
+  - :thumb
+:Rest:
+  :picture:
+  - :medium
+  - :thumb
+:Restaurant:
+  :restaurant_logo:
+  - :medium
+  - :thumb
