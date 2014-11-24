@@ -1,10 +1,13 @@
 class RestaurantsController < ApplicationController
   before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:edit, :update, :destroy]
+  before_action :authenticate_admin!, only: [:edit, :update, :destroy]
 
 
   # GET /restaurants
   # GET /restaurants.json
   def index
+    @meals = Meal.all
     @restaurants = Restaurant.all
   respond_to do |format|
     format.html
@@ -75,6 +78,15 @@ class RestaurantsController < ApplicationController
     def set_restaurant
       @restaurant = Restaurant.find(params[:id])
     end
+
+    def authenticate_admin!
+      # check if current user is admin
+      unless current_user.admin
+        # if current_user is not admin redirect to some route
+        redirect_to root_path
+      end
+      # if current_user is admin he will proceed to edit action
+  end
 
    
 

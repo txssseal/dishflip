@@ -1,0 +1,49 @@
+<h1>Restaurant List</h1><%= link_to 'Create New Restaurant', new_restaurant_path %>
+<table class = "table table-striped">
+      <thead>
+        <tr>
+          <th>Restaurant Name</th>
+          <th>Logo</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Website</th>
+          <th>Facebook</th>
+          <th>Address</th>
+         <!-- <th>Meal Price</th>
+          <th>Restaurant Area</th>
+          <th>Restaurant Address</th>
+          <th>Cuisine Type</th>
+          <th>Picture</th>-->
+        </tr> 
+      </thead>
+      <tbody>
+    
+    <% @restaurants.each do |rest| %>
+          <tr>
+            <td><%= link_to rest.restaurant_name, rest %></td>
+            <td><%= image_tag rest.restaurant_logo.url(:thumb) %></td>
+            <td><%= rest.email %></td>
+            <td><%= rest.phone %></td>
+            <td><%= rest.website %></td>
+            <td><%= rest.facebook %></td>
+
+            
+
+           
+           <!-- <td><%#= rest.meals.meal_name %></td>
+            <td><%#= rest.meal_price %></td>
+            <td><%#= rest.restaurant_area %></td>
+            <td><%#= rest.restaurant_address %></td>
+            <td><%#= rest.cuisine_type %></td>
+            <td><%#= image_tag rest.picture.url(:thumb) %></td>-->
+            <td><%= link_to 'Show', rest %></td>
+            <td><%= link_to 'Edit', edit_restaurant_path(rest) %></td>
+            <td><%= link_to 'Destroy', rest, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+<br>
+
+<%= link_to 'New Restaurant', new_restaurant_path %>

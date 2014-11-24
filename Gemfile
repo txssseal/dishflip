@@ -15,6 +15,7 @@ gem 'will_paginate', '~> 3.0'
 gem 'bootstrap_form'
 gem 'aws-sdk'
 gem 'sprockets', '=2.11.0'
+gem 'thin'
 
 
 
