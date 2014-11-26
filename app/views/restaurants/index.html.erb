@@ -7,12 +7,19 @@
   <div class = "row">
     
       <% @meals.each do |r| %>
-        <div class = "col-md-3">
+        <div class = "col-md-4">
           <div class = "rest-box">
             <%#= r.restaurant_name %>
             <%# r.meals.each do |meal| %>
-              <%= image_tag r.meal_photo.url(:thumb) %>
-            <%# end %>
+              <center><%= image_tag r.meal_photo.url(:medium) %></center>
+              <center><b><%= r.meal_name %></b></h6></center>
+            <% if r.meal_price.blank? %>
+              <center><h6>No info for meal price<%#= r.meal_price %></h6></center>
+            <% else %>
+              <center><h6>$<%= r.meal_price %></h6></center>
+            <% end %>
+              <center><h4>@<%= r.restaurant.restaurant_name %> <%#= image_tag r.restaurant.restaurant_logo.url(:thumb) %></h6></center>
+
           </div>
         </div>
       <% end %>

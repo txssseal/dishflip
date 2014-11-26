@@ -7,8 +7,9 @@ class RestaurantsController < ApplicationController
   # GET /restaurants
   # GET /restaurants.json
   def index
-    @meals = Meal.all
+    @meals = Meal.order('RANDOM()')
     @restaurants = Restaurant.all
+    @locations = Location.all
   respond_to do |format|
     format.html
     format.json { render json: @restaurants }
