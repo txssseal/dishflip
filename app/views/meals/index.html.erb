@@ -1,3 +1,5 @@
+<%= form_tag destroy_multiple_meals_path, method: :delete do %>
+<%#= form_tag edit_individual_meals_path do %>
 <table class = "table table-striped">
       <thead>
         <tr>
@@ -5,6 +7,9 @@
           <th>Meal Price</th>
           <th>Cuisine Type</th>
           <th>Picture</th>
+          <th>Show</th>
+          <!--<th>Edit</th>-->
+          <th>Delete</th>
           <%= link_to "Home", root_path %>
         </tr> 
       </thead>
@@ -15,7 +20,7 @@
             <td><%= meal.meal_name %></td>
             <td><%= meal.meal_price %></td>
             <td><%= meal.cuisine_type %></td>
-            <td><%= image_tag meal.meal_photo.url(:thumb) %></td>
+            <td><%= image_tag meal.meal_photo.url(:medium) %></td>
             <!--Put information here 
             <td><%#= rest.meal_name %></td>
             <td><%#= rest.meal_price %></td>
@@ -24,12 +29,17 @@
             <td><%#= rest.cuisine_type %></td>
             <td><%#= image_tag rest.picture.url(:thumb) %></td>-->
             <td><%= link_to 'Show', meal %></td>
-            <td><%= link_to 'Edit', edit_meal_path(meal) %></td>
-            <td><%= link_to 'Destroy', meal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <!--<td><%#= link_to 'Edit', edit_meal_path(meal) %></td>
+            <td><%#= link_to 'Destroy', meal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%#= check_box_tag "meal_ids[]", meal.id %></td>-->
+            <td><%= check_box_tag "meal_ids_delete[]", meal.id %></td>
           </tr>
       <% end %>
     </tbody>
   </table>
+  <%= submit_tag "Edit Selected" %>
+  <%# end %>
+<% end %>
 
 <br>
 

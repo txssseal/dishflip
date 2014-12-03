@@ -66,6 +66,26 @@ class MealsController < ApplicationController
     end
   end
 
+  def destroy_multiple
+
+    Meal.destroy(params[:meal_ids_delete])
+
+    respond_to do |format|
+      format.html { redirect_to meals_path }
+      format.json { head :no_content }
+    end
+  end
+
+  def edit_individual
+   @meal = Meal.find(params[:meal_ids])
+  end
+
+  def update_individual
+    Meal.update(params[:meals].keys, params[:meals].values)
+    flash[:notice] = "Meals updated"
+    redirect_to meals_url
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_meal

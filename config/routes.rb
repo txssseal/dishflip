@@ -2,10 +2,17 @@ DishFlip::Application.routes.draw do
   devise_for :users
   resources :locations
 
-  resources :meals
+ 
 
   resources :restaurants
 
+  resources :meals do
+    collection do
+      delete 'destroy_multiple'
+      post 'edit_individual'
+      put 'update_individual'
+    end
+  end
 
 
   # The priority is based upon order of creation: first created -> highest priority.

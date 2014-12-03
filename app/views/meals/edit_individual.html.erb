@@ -1,0 +1,14 @@
+<title>Edit Meals</title>
+
+<%= form_tag update_individual_meals_path, :method => :put do %>
+	<% for meal in @meal %>
+		<%= fields_for "meals[]", meal do |f| %>
+			<h2><%=h meal.meal_name %></h2>
+			<%= render 'fields', :f => f %>
+		<% end %>
+		 
+	<% end %>
+	<p><%= submit_tag "Submit" %></p>
+
+
+<% end %>
