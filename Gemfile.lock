@@ -1,13 +1,3 @@
-GIT
-  remote: git://github.com/thoughtbot/paperclip.git
-  revision: 804b4edc1d8d7ca9865170e34f26da7d66f6d0d5
-  specs:
-    paperclip (4.2.0)
-      activemodel (>= 3.0.0)
-      activesupport (>= 3.0.0)
-      cocaine (~> 0.5.3)
-      mime-types
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -117,6 +107,11 @@ GEM
     nokogiri (1.6.5)
       mini_portile (~> 0.6.0)
     orm_adapter (0.5.0)
+    paperclip (4.2.0)
+      activemodel (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      cocaine (~> 0.5.3)
+      mime-types
     pg (0.15.1)
     polyglot (0.3.5)
     pony (1.11)
@@ -214,7 +209,7 @@ DEPENDENCIES
   guard-livereload
   jquery-rails (= 3.0.4)
   mail_form (~> 1.5.0.rc)
-  paperclip!
+  paperclip
   pg (= 0.15.1)
   pony
   puma

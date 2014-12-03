@@ -8,7 +8,7 @@ gem 'mail_form', '~> 1.5.0.rc'
 gem 'simple_form', '~> 3.0.0.rc'
 gem 'pony'
 gem 'devise'
-gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+gem "paperclip"
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 gem 'will_paginate', '~> 3.0'
