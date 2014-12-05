@@ -1,10 +1,6 @@
 DishFlip::Application.routes.draw do
   devise_for :users
-  resources :locations
-
- 
-
-  resources :restaurants
+  #resources :locations
 
   resources :meals do
     collection do
@@ -12,6 +8,10 @@ DishFlip::Application.routes.draw do
       post 'edit_individual'
       put 'update_individual'
     end
+  end 
+
+  resources :restaurants do
+   resources :locations    
   end
 
 

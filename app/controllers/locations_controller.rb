@@ -5,6 +5,7 @@ class LocationsController < ApplicationController
   # GET /locations.json
   def index
     @locations = Location.all
+    #@restaurant = Restaurant.find(params[:id])
   end
 
   # GET /locations/1
@@ -15,6 +16,8 @@ class LocationsController < ApplicationController
   # GET /locations/new
   def new
     @location = Location.new
+    @restaurant = Restaurant.new
+    @restaurant.locations.build
   end
 
   # GET /locations/1/edit

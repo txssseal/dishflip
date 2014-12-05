@@ -29,10 +29,14 @@
     </tbody>
   </table>
 
-
+<div>
+  <% @restaurant.locations.each do |l| %>
+    <%= l.street_address %>
+  <% end %>
+</div>
 
 <%= link_to 'New Meal', new_meal_path(restaurant_id: @restaurant.id) %></br>
-<%= link_to 'New Location', new_location_path(restaurant_id: @restaurant.id) %></br>
+<%= link_to 'New Location', new_restaurant_location_path(restaurant_id: @restaurant.id) %></br>
 
 <%= link_to 'Edit Restaurant Name', edit_restaurant_path(@restaurant) %> |
 <%= link_to 'Back', restaurants_path %>
